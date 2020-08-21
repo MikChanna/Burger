@@ -1,7 +1,9 @@
+// require orm
 var orm = require("../config/orm.js");
 
+// calling orm functions
 var burgers = {
-  all: function (cb) {
+  selectAll: function (cb) {
     orm.all("burgers", function (res) {
       cb(res);
     });
