@@ -1,26 +1,26 @@
 var connection = require("./connection");
 
 var orm = {
-  selectAll: function (tableInput) {
+  selectAll: function (tableInput, cb) {
     var queryString = "SELECT * FROM ??";
     connection.query(queryString, [tableInput], function (err, result) {
       if (err) throw err;
-      console.log(result);
+      cb(result);
     });
   },
 
-  insertOne: function (tableInput, val1, val2) {
+  insertOne: function (tableInput, val1, val2, cb) {
     var queryString = "INSERT INTO ?? SET ?";
     connection.query(queryString, [tableInput, val1, val2], function (
       err,
       result
     ) {
       if (err) throw err;
-      console.log(result);
+      cb(result);
     });
   },
 
-  updateOne: function (tableInput, val1, val2) {
+  updateOne: function (val1, val2, cb) {
     var queryString = "UPDATE ?? SET ? WHERE ?";
 
     connection.query(queryString, [tableInput, val1, val2], function (
@@ -28,7 +28,7 @@ var orm = {
       result
     ) {
       if (err) throw err;
-      console.log(result);
+      cb(result);
     });
   },
 };
