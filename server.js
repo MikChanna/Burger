@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // static directory
-app.use(express.static("app/public"));
+app.use(express.static(__dirname + "/public"));
 
 // set up handlebars
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));

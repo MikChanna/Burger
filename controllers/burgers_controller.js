@@ -24,17 +24,6 @@ router.post("api/burgers", function (req, res) {
   });
 });
 
-router.post("api/burgers", function (req, res) {
-  burgers.insertOne({
-    where: {
-      burger_name: req.params.name,
-      devoured: false,
-    },
-  })(function (results) {
-    res.json(results);
-  });
-});
-
 router.put("api/burgers/:id", function (req, res) {
   burgers
     .insertOne({
