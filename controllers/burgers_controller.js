@@ -1,25 +1,16 @@
 var express = require("express");
 var burgers = require("../modes/model-burgers");
-
-// sets up Express app
-var app = express();
-
-// set ups express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
-
-// static directory
-app.use(express.static("app/public"));
+var router = express.Router();
 
 // Routes
 
-app.get("/", function (req, res) {
+router.get("/", function (req, res) {
   burgers.selectAll({}).then(function (results) {
     res.json(results);
   });
 });
 
-app.post("api/burgers", function (req, res) {
+router.post("api/burgers", function (req, res) {
   burgers
     .insertOne({
       where: {
@@ -32,7 +23,7 @@ app.post("api/burgers", function (req, res) {
     });
 });
 
-app.post("api/burgers", function (req, res) {
+router.post("api/burgers", function (req, res) {
   burgers
     .insertOne({
       where: {
@@ -45,7 +36,7 @@ app.post("api/burgers", function (req, res) {
     });
 });
 
-app.put("api/burgers/:id", function (req, res) {
+router.put("api/burgers/:id", function (req, res) {
   burgers
     .insertOne({
       where: {
@@ -57,3 +48,5 @@ app.put("api/burgers/:id", function (req, res) {
       res.json(results);
     });
 });
+
+module.exports = router;
