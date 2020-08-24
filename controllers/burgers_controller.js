@@ -7,7 +7,7 @@ var router = express.Router();
 router.get("/", function (req, res) {
   burgers.all(function (data) {
     var burgerdata = {
-      burger: data,
+      burgers: data,
     };
     res.render("index", burgerdata);
   });
@@ -19,6 +19,7 @@ router.post("api/burgers", function (req, res) {
     [req.body.burger_name, req.body.devoured],
     function (result) {
       res.json({ id: result.insertId });
+      res.render("index", result);
     }
   );
 });
