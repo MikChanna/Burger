@@ -6,35 +6,33 @@ var router = express.Router();
 
 router.get("/", function (req, res) {
   burgers.all(function (data) {
-    var burgername = {
-      burger_name: data,
+    var burgerdata = {
+      burger: data,
     };
-    res.render("index", burgername);
+    res.render("index", burgerdata);
   });
 });
 
 router.post("api/burgers", function (req, res) {
-  burgers.insertOne({
-    where: {
-      burger_name: req.params.name,
-      devoured: false,
-    },
-  })(function (results) {
-    res.json(results);
-  });
+  burgers.insertOne(
+    ["name", "devoured"],
+    [req.body.burger_name, req.body.devoured],
+    function (result) {
+      res.json({ id: result.insertId });
+    }
+  );
 });
 
 router.put("api/burgers/:id", function (req, res) {
-  burgers
-    .insertOne({
-      where: {
-        burger_name: req.params.name,
-        devoured: false,
-      },
-    })
-    .then(function (results) {
-      res.json(results);
-    });
+  var condition = "id = " + req.params.id;
+
+  burgers.update(
+    {
+      devoured: req.body.devoured,
+    },
+    condition,
+    function (result) {}
+  );
 });
 
 module.exports = router;

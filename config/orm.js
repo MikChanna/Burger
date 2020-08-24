@@ -4,14 +4,14 @@ var connection = require("./connection");
 //query functions
 var orm = {
   all: function (tableInput, cb) {
-    var queryString = "SELECT * FROM ??";
-    connection.query(queryString, [tableInput], function (err, result) {
+    var queryString = "SELECT * FROM " + tableInput;
+    connection.query(queryString, function (err, result) {
       if (err) throw err;
       cb(result);
     });
   },
 
-  insertOne: function (tableInput, val1, val2, cb) {
+  insertOne: function (tableInput, val1, cb) {
     var queryString = "INSERT INTO ?? SET ?";
     connection.query(queryString, [tableInput, val1, val2], function (
       err,
