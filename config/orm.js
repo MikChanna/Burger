@@ -13,16 +13,14 @@ var orm = {
 
   insertOne: function (tableInput, val1, cb) {
     connection.query(
-      "INSERT INTO " +
-        tableInput +
-        "(burger_name, devoured) VALUES (" +
-        val1 +
-        ", false)"
-    ),
+      "INSERT INTO " + tableInput + "(burger_name) VALUES ('" + val1 + "');",
       function (err, result) {
-        if (err) throw err;
+        if (err) {
+          throw err;
+        }
         cb(result);
-      };
+      }
+    );
   },
 
   updateOne: function (tableInput, condition, cb) {
