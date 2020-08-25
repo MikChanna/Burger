@@ -13,18 +13,15 @@ router.get("/", function (req, res) {
   });
 });
 
-router.post("api/burgers", function (req, res) {
-  burgers.insertOne(
-    ["name", "devoured"],
-    [req.body.burger_name, req.body.devoured],
-    function (result) {
-      res.json({ id: result.insertId });
-      res.render("index", result);
-    }
-  );
+router.post("/api/burgers", function (req, res) {
+  burgers.insertOne([req.body.burger_name, req.body.devoured], function (
+    result
+  ) {
+    res.json({ result });
+  });
 });
 
-router.put("api/burgers/:id", function (req, res) {
+router.put("/api/burgers/:id", function (req, res) {
   var condition = "id = " + req.params.id;
 
   burgers.update(

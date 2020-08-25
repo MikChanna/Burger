@@ -9,8 +9,8 @@ var burgers = {
     });
   },
 
-  insertOne: function (val1, cb) {
-    orm.insertOne("burgers", val1, function (res) {
+  insertOne: function (val1, condition, cb) {
+    orm.insertOne("burgers", val1, condition, function (res) {
       cb(res);
     });
   },

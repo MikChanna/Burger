@@ -1,14 +1,14 @@
 USE burgers_db;
 
-INSERT INTO burger
+INSERT INTO burgers
     (burger_name, devoured)
 VALUES
     ("Cheeseburger", false);
-INSERT INTO burger
+INSERT INTO burgers
     (burger_name, devoured)
 VALUES
     ("Teriyaki Burger", false);
-INSERT INTO burger
+INSERT INTO burgers
     (burger_name, devoured)
 VALUES
     ("Veggie Burger", false);

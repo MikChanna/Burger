@@ -11,9 +11,9 @@ var orm = {
     });
   },
 
-  insertOne: function (tableInput, val1, cb) {
-    var queryString = "INSERT INTO ?? SET ?";
-    connection.query(queryString, [tableInput, val1, val2], function (
+  insertOne: function (tableInput, val1, condition, cb) {
+    var queryString = "INSERT INTO ?? VALUES ? ?";
+    connection.query(queryString, [tableInput, val1, condition], function (
       err,
       result
     ) {
@@ -22,10 +22,10 @@ var orm = {
     });
   },
 
-  updateOne: function (val1, val2, cb) {
+  updateOne: function (val1, condition, cb) {
     var queryString = "UPDATE ?? SET ? WHERE ?";
 
-    connection.query(queryString, [tableInput, val1, val2], function (
+    connection.query(queryString, [tableInput, val1, condition], function (
       err,
       result
     ) {
