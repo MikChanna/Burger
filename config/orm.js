@@ -11,21 +11,24 @@ var orm = {
     });
   },
 
-  insertOne: function (tableInput, val1, condition, cb) {
-    var queryString = "INSERT INTO ?? VALUES ? ?";
-    connection.query(queryString, [tableInput, val1, condition], function (
-      err,
-      result
-    ) {
-      if (err) throw err;
-      cb(result);
-    });
+  insertOne: function (tableInput, val1, cb) {
+    connection.query(
+      "INSERT INTO " +
+        tableInput +
+        "(burger_name, devoured) VALUES (" +
+        val1 +
+        ", false)"
+    ),
+      function (err, result) {
+        if (err) throw err;
+        cb(result);
+      };
   },
 
-  updateOne: function (val1, condition, cb) {
-    var queryString = "UPDATE ?? SET ? WHERE ?";
+  updateOne: function (tableInput, condition, cb) {
+    var queryString = "UPDATE ?? SET devoured=true WHERE ?";
 
-    connection.query(queryString, [tableInput, val1, condition], function (
+    connection.query(queryString, [tableInput, condition], function (
       err,
       result
     ) {
