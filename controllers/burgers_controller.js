@@ -20,7 +20,7 @@ router.post("/api/burgers", function (req, res) {
 });
 
 router.put("/api/burgers/:id", function (req, res) {
-  burgers.update(req.body.burger_id, function (result) {
+  burgers.updateOne(req.body.burger_id, function (result) {
     res.redirect("/");
   });
 });
