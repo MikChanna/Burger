@@ -4,10 +4,10 @@
         <h3>My Yummy Burgers</h3>
         <ul>
             {{#each burgers}}
-            {{#unless devoured}}
+            {{#unless this.devoured}}
             <li>
                 <p>
-                    {{burger_name}} {{this.id}}. {{this.burger}}
+                    {{this.id}} {{this.burger_name}}
 
                     <button data-burgerid="{{this.id}}" class="eatburger">Eat Burger</button>
                 </p>
@@ -28,10 +28,10 @@
 
     <div>
         <h3> Yummy Burgers in My Belly!</h3>
-        <ul class="eaten burgers">
+        <ul class="eatenBurgers" id={{this.id}}>
 
             {{#each burgers}}
-            {{#if devoured}}
+            {{#if this.devoured}}
             <button data-burgerid="{{this.id}}" class="updateburger">Make another Burger</button>
 
             {{/if}}
