@@ -24,15 +24,13 @@ var orm = {
   },
 
   updateOne: function (tableInput, condition, cb) {
-    var queryString = "UPDATE ?? SET devoured=true WHERE id = ?";
-
-    connection.query(queryString, [tableInput, condition], function (
-      err,
-      result
-    ) {
-      if (err) throw err;
-      cb(result);
-    });
+    connection.query(
+      "UPDATE " + tableInput + " SET devoured=true WHERE id=" + condition + ";",
+      function (err, result) {
+        if (err) throw err;
+        cb(result);
+      }
+    );
   },
 };
 

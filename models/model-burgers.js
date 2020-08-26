@@ -13,8 +13,8 @@ var burgers = {
     orm.insertOne("burgers", name, cb);
   },
 
-  updateOne: function (id, cb) {
-    orm.updateOne("burgers", id, cb);
+  updateOne: function (id, condition, cb) {
+    orm.updateOne("burgers", id, condition, cb);
   },
 };
 
