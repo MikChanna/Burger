@@ -25,7 +25,11 @@ var orm = {
 
   updateOne: function (tableInput, condition, cb) {
     connection.query(
-      "UPDATE " + tableInput + " SET devoured=true WHERE id=" + condition + ";",
+      "UPDATE " +
+        tableInput +
+        " SET devoured=true WHERE id= " +
+        condition +
+        ";",
       function (err, result) {
         if (err) throw err;
         cb(result);

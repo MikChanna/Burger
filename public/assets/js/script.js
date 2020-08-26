@@ -7,7 +7,7 @@ $(function () {
 
     var newBurger = {
       burger_name: $(".newBurger").val().trim(),
-      devoured: 0,
+      devoured: "false",
     };
 
     // Send the POST request.

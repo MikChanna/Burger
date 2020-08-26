@@ -12,9 +12,9 @@
                 {{#unless this.devoured}}
                 <li>
                     <p>
-                        {{this.id}} {{this.burger_name}}
+                        {{this.burger_name}}
 
-                        <button data-burgerid="{{this.id}}" class="eatburger">Eat Burger</button>
+                        <button class="eatburger" data-id={{this.id}}>Eat Burger</button>
                     </p>
                 </li>
                 {{/unless}}
@@ -33,14 +33,14 @@
 
         <div class="col-sm border">
             <h4> Yummy Burgers in My Belly!</h4>
-            <ul class="eatenBurgers" id={{this.id}}>
+            <ul class="eatenBurgers">
 
                 {{#each burgers}}
                 {{#if this.devoured}}
 
                 <li>
                     <p>
-                        {{this.id}} {{this.burger_name}}
+                        {{this.burger_name}}
                     </p>
                 </li>
                 {{/if}}
