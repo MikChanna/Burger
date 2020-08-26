@@ -16,6 +16,10 @@ var burgers = {
   updateOne: function (id, cb) {
     orm.updateOne("burgers", id, cb);
   },
+
+  deleteOne: function (id, cb) {
+    orm.updateOne("burgers", id, cb);
+  },
 };
 
 module.exports = burgers;

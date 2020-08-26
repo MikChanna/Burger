@@ -25,4 +25,10 @@ router.put("/api/burgers/:id", function (req, res) {
   });
 });
 
+router.put("/:id", function (req, res) {
+  burgers.deleteOne(req.params.id, function (result) {
+    res.json(result);
+  });
+});
+
 module.exports = router;
