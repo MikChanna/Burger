@@ -1,3 +1,18 @@
 * {
   background-color: lightblue;
+  text-align: center;
+  font-family: "Bebas Neue", cursive;
+}
+
+img {
+  width: 400px;
+  height: 400px;
+}
+
+button {
+  background-color: orange;
+}
+
+.row {
+  margin-top: 10px;
 }
