@@ -18,7 +18,7 @@ var burgers = {
   },
 
   deleteOne: function (id, cb) {
-    orm.updateOne("burgers", id, cb);
+    orm.deleteOne("burgers", id, cb);
   },
 };
 

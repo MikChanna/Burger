@@ -40,4 +40,19 @@ $(function () {
       location.reload();
     });
   });
+
+  // send the DELETE request
+  $(".deleteburger").on("click", function (event) {
+    event.preventDefault();
+    var id = $(this).data("id");
+
+    // Send the PUT request.
+    $.ajax("/api/burgers/" + id, {
+      type: "DELETE",
+      data: { id: id },
+    }).then(function () {
+      // Reload the page to get the updated list
+      location.reload();
+    });
+  });
 });
