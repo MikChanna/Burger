@@ -22,6 +22,7 @@ $(function () {
   });
 
   $(".eatburger").on("click", function (event) {
+    event.preventDefault();
     var id = $(this).data("id");
     var newDevoured = $(this).data("devoured");
 
@@ -34,7 +35,7 @@ $(function () {
       type: "PUT",
       data: newDevouredState,
     }).then(function () {
-      console.log("changed devoured to", newDevoured);
+      console.log("burger devoured");
       // Reload the page to get the updated list
       location.reload();
     });
