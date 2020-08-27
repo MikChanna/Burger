@@ -1,5 +1,6 @@
 // Set up MySQL connection.
 var mysql = require("mysql");
+// var pw = require("../pw");
 
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL);
