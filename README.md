@@ -8,8 +8,8 @@ This Burger app utilizes Node, SQL, Express, Handlebars, and the MVC format.  Th
 **## Table of Contents**
 
 - [Eat-Da-Burger](#eat-da-burger)
-  - [Usage Information](#usage-information)
-  - [Contribution](#contribution)
+- [Usage Information](#usage-information)
+- [Contribution](#contribution)
 - [Questions](#questions)
 
 
