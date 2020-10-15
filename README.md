@@ -16,6 +16,7 @@ This Burger app utilizes Node, SQL, Express, Handlebars, and the MVC format.  Th
 ## Usage Information
 
 Click the link to the deployed application on Heroku.  
+https://enigmatic-ridge-19818.herokuapp.com/ 
 
 ## Contribution
 
